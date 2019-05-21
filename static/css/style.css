@@ -71,7 +71,8 @@ button:not(:active) {
   background-color: #00afcb;
 }
 .operator:active,
-.other:active {
+.other:active,
+.operator.active {
   background-color: #afcb00;
 }
 
@@ -79,9 +80,4 @@ button:active,
 button:focus {
   outline: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-button.zero {
-  width: 50vw;
-  max-width: 320px;
 }

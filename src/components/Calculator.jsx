@@ -9,7 +9,7 @@ const Calculator = () => {
   const {
     operator,
     view,
-    isCalculated,
+    isHighLight,
     setValue,
     setOperator,
     equal,
@@ -28,14 +28,21 @@ const Calculator = () => {
         <Button onClick={() => setValue(0)} className="number zero">
           0
         </Button>
-        <Button className="number">.</Button>
       </div>
       <div className="opeBoard">
-        {operators.map((o, i) => (
-          <Button key={i} onClick={() => setOperator(o)} className="operator">
-            {o}
-          </Button>
-        ))}
+        {operators.map((o, i) => {
+          const isActive = o == operator && isHighLight;
+
+          return (
+            <Button
+              key={i}
+              onClick={() => setOperator(o)}
+              className={`operator ${isActive ? "active" : ""}`}
+            >
+              {o}
+            </Button>
+          );
+        })}
         <Button onClick={() => equal()} className="operator">
           =
         </Button>
