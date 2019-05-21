@@ -1,6 +1,7 @@
 import React from "react";
 
 import { useCalculatorState } from "../hooks";
+import Button from "./Button";
 
 const Calculator = () => {
   const num = [7, 8, 9, 4, 5, 6, 1, 2, 3];
@@ -20,31 +21,31 @@ const Calculator = () => {
       <div className="view">{view}</div>
       <div className="numBoard">
         {num.map(i => (
-          <button key={i} onClick={() => setValue(i)} className="number">
+          <Button key={i} onClick={() => setValue(i)} className="number">
             {i}
-          </button>
+          </Button>
         ))}
-        <button onClick={() => setValue(0)} className="number zero">
+        <Button onClick={() => setValue(0)} className="number zero">
           0
-        </button>
-        <button className="number">.</button>
+        </Button>
+        <Button className="number">.</Button>
       </div>
       <div className="opeBoard">
         {operators.map((o, i) => (
-          <button key={i} onClick={() => setOperator(o)} className="operator">
+          <Button key={i} onClick={() => setOperator(o)} className="operator">
             {o}
-          </button>
+          </Button>
         ))}
-        <button onClick={() => equal()} className="operator">
+        <Button onClick={() => equal()} className="operator">
           =
-        </button>
+        </Button>
       </div>
       <div className="others">
-        <button onClick={() => clear()} className="others">
+        <Button onClick={() => clear()} className="other">
           AC
-        </button>
-        <button className="others">±</button>
-        <button className="others">％</button>
+        </Button>
+        <Button className="other">±</Button>
+        <Button className="other">％</Button>
       </div>
     </div>
   );
