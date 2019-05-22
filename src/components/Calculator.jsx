@@ -25,6 +25,7 @@ const Calculator = () => {
             {i}
           </Button>
         ))}
+        {/* onClickやと反応が遅かった */}
         <Button onTouchEnd={() => setValue(0)} className="number zero">
           0
         </Button>
