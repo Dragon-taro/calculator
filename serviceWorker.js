@@ -1,6 +1,5 @@
 const CACHE_VERSION = "static-v1";
 const paths = ["/", "/static/js/bundle.js", "/static/css/style.css"];
-console.log("service worker");
 
 self.addEventListener("install", event => {
   const preCache = async () => {
@@ -34,8 +33,9 @@ self.addEventListener("fetch", event => {
 
   const handleRequest = async () => {
     const cache = await caches.open(CACHE_VERSION);
-    const cachedResponse = await cache.match(request);
 
+    // cacheを見に行ってあったらそれを返してリクエストはキャンセル
+    const cachedResponse = await cache.match(request);
     if (cachedResponse) {
       return cachedResponse;
     }
