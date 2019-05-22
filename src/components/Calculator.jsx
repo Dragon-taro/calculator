@@ -21,11 +21,11 @@ const Calculator = () => {
       <div className="view">{view}</div>
       <div className="numBoard">
         {num.map(i => (
-          <Button key={i} onClick={() => setValue(i)} className="number">
+          <Button key={i} onTouchEnd={() => setValue(i)} className="number">
             {i}
           </Button>
         ))}
-        <Button onClick={() => setValue(0)} className="number zero">
+        <Button onTouchEnd={() => setValue(0)} className="number zero">
           0
         </Button>
       </div>
@@ -36,19 +36,19 @@ const Calculator = () => {
           return (
             <Button
               key={i}
-              onClick={() => setOperator(o)}
+              onTouchEnd={() => setOperator(o)}
               className={`operator ${isActive ? "active" : ""}`}
             >
               {o}
             </Button>
           );
         })}
-        <Button onClick={() => equal()} className="operator">
+        <Button onTouchEnd={() => equal()} className="operator">
           =
         </Button>
       </div>
       <div className="others">
-        <Button onClick={() => clear()} className="other">
+        <Button onTouchEnd={() => clear()} className="other">
           AC
         </Button>
         <Button className="other">±</Button>

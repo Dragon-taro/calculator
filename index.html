@@ -1,15 +1,30 @@
-<html>
+<!DOCTYPE html>
+<html lang="ja">
   <head>
     <title>calculator</title>
+    <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
     <link rel="stylesheet" href="/static/css/style.css" />
     <link rel="manifest" href="/manifest.json" />
+    <link
+      rel="apple-touch-icon"
+      href="/static/images/icon-144x144.png"
+      sizes="144x144"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/static/images/icon-72x72.png"
+      sizes="72x72"
+    />
   </head>
   <body>
     <div id="root"></div>
     <script src="/static/js/bundle.js"></script>
+    <script>
+      navigator.serviceWorker.register("/serviceWorker.js");
+    </script>
   </body>
 </html>

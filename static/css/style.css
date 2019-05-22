@@ -16,6 +16,10 @@ body {
   padding: 0;
 }
 
+#root {
+  height: 100%;
+}
+
 .wrapper {
   background-color: #000;
   max-width: 640px;
