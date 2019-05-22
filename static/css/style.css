@@ -1,11 +1,19 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-
 /* 選択のキャンセル */
 :not(input, textarea) {
   -webkit-user-select: none;
+}
+
+/* 画面固定 */
+html,
+body {
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .wrapper {
@@ -15,7 +23,7 @@ body {
   height: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-rows: 1fr 100px 80px 320px 10px;
+  grid-template-rows: 1fr 100px 80px 320px 30px;
   grid-template-columns: 75vw 25vw;
 }
 
